@@ -23,7 +23,7 @@ function App() {
         </div>
       </nav>
 
-      <img src="./public/images/Budget.png" alt="aesthetic top" width="100%"></img>
+      <img src="/images/Budget.png" alt="aesthetic top" width="100%"></img>
     </>
   )
 }
