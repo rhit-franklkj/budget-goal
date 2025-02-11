@@ -1,5 +1,4 @@
 #root {
-  background-color: #A8857a; 
   color: white;  
   /*font-size: 50em; */
   font-family: 'Gilda Display';
@@ -8,13 +7,35 @@
   src: url(https://fonts.gstatic.com/s/gildadisplay/v18/t5tmIRoYMoaYG0WEOh7HwMeR7Tk.ttf) format('truetype');
 }
 
+.thing {
+  text-align: center;
+  position: relative; 
+  /* left: 900px;  */
+  top: -320px; 
+  display: flex;
+  flex-direction: column;  
+  color: #A8857a; 
+}
 
+.amount {
+  /* display: flex; */
+  padding: 10px; 
+}
+
+h1 {
+  font-size: 100px; 
+}
+
+.navbar.navbar-expand-lg {
+  background-color: #A8857a; 
+}
 .container-fluid {
   /* background-color: blue;  */
   color: white;  
 }
 
 .navbar-brand {
+  
   color: white;
   font-size: 2em; 
 }

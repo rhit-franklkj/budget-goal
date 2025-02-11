@@ -24,6 +24,18 @@ function App() {
       </nav>
 
       <img src="/images/Budget.png" alt="aesthetic top" width="100%"></img>
+
+      <div className="thing">
+      <h1>Budget</h1><br></br>
+      <h2>+29,000</h2><br></br>
+
+      <div className="amount"> 
+      <h3>Income </h3>
+      <h3>Expenses</h3>
+      </div>
+     
+      </div>
+      
     </>
   )
 }
