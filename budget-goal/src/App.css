@@ -5,13 +5,14 @@
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/gildadisplay/v18/t5tmIRoYMoaYG0WEOh7HwMeR7Tk.ttf) format('truetype');
+  background-color: #00ff00; 
 }
 
 .thing {
   text-align: center;
   position: relative; 
   /* left: 900px;  */
-  top: -270px; 
+  top: -200px; 
   display: inline-flex;
   flex-direction: column;  
   color: white; 
@@ -23,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  height: 0vh;
 }
 
 .amount {
@@ -93,10 +94,42 @@ h1 {
 
 @media all and (max-width: 1468px) {
   .thing{
-    top: -200px;
+    top: -150px;
   }
 }
 
+@media all and (max-width: 1286px) {
+  .thing{
+    top: -100px;
+  }
+}
+
+.row.g-3.align-items-center {
+  justify-content: center; 
+  height: 10vh; 
+  margin: 0px; 
+  padding-bottom: 5px; 
+  background-color: #A8857a; 
+}
+
+.btn.btn-secondary.dropdown-toggle {
+  background-color: #5d3831; 
+  border: 0px;
+}
+
+.col-auto {
+  display: flex; 
+  flex-direction: row; 
+}
+
+.container2 {
+  display: flex; 
+  background-color: white; 
+}
+
+.table {
+  margin: 10px; 
+}
 
 
 

@@ -25,16 +25,98 @@ function App() {
 
       <img src="/images/Budget.png" alt="aesthetic top" width="100%"></img>
       <div className="container1">
-      <div className="thing">
-      <h1>Avaliable Budget</h1>
-      <h2 id="number">+29,000</h2>
-      <div className="amount"> 
-      <h3 id="income">Income &nbsp;&nbsp;&nbsp;&nbsp; + 35,000 </h3>
-      <h3 id="expense">Expenses  &nbsp;&nbsp;&nbsp;&nbsp; - 35,000</h3>
+        <div className="thing">
+          <h1>Avaliable Budget</h1>
+          <h2 id="number">+29,000</h2>
+          <div className="amount">
+            <h3 id="income">Income &nbsp;&nbsp;&nbsp;&nbsp; + 35,000 </h3>
+            <h3 id="expense">Expenses  &nbsp;&nbsp;&nbsp;&nbsp; - 35,000</h3>
+          </div>
+        </div>
       </div>
+
+      <div className="row g-3 align-items-center">
+        <div className="col-auto">
+          <button className="btn btn-secondary dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">+</button>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#" onClick={() => {
+              document.getElementById("dropdown").textContent = "+";
+            }}>+</a></li>
+            <li><a className="dropdown-item" href="#" onClick={() => {
+              document.getElementById("dropdown").textContent = "–";
+            }}>-</a></li>
+          </ul>
+        </div>
+        <div className="col-auto">
+        <label className="fs-2">$&nbsp;</label>
+          <input type="text" id="inputMoney" className="form-control fs-5"></input>
+        </div>
       </div>
+            {/*Todo: add actual data to the thing. I just do not care enough rn. Also I want to get CSS ironed out before doing that. */}
+      <div className="container2">
+        <table className="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colSpan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<table className="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colSpan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+
       </div>
-      
+
+
     </>
   )
 }
