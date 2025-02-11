@@ -91,10 +91,12 @@ h1 {
   text-decoration-line: underline;
 }
 
-@media all and (min-width: 768px) {
-  .container1{
-    top: 120px;
+@media all and (max-width: 1468px) {
+  .thing{
+    top: -200px;
   }
 }
+
+
 
 
