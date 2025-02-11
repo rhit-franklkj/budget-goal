@@ -1,5 +1,5 @@
 #root {
-  background-color: #518682; 
+  background-color: #9C8A79; 
   color: white;  
   /*font-size: 50em; */
 }
@@ -20,10 +20,8 @@
 
 .navbar-brand:hover {
   color: white;
-  text-decoration-line: underline;
-  
+  text-decoration-line: underline; 
 }
-
 
 .navbar-nav .nav-link,  .navbar-nav .nav-link.active{
   color: white ; 
