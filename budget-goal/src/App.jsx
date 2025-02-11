@@ -22,6 +22,8 @@ function App() {
           </div>
         </div>
       </nav>
+
+      <img src="./public/images/Budget.png" alt="aesthetic top" width="100%"></img>
     </>
   )
 }
