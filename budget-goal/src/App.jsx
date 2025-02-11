@@ -24,16 +24,15 @@ function App() {
       </nav>
 
       <img src="/images/Budget.png" alt="aesthetic top" width="100%"></img>
-
+      <div className="container1">
       <div className="thing">
-      <h1>Budget</h1><br></br>
-      <h2>+29,000</h2><br></br>
-
+      <h1>Avaliable Budget</h1>
+      <h2 id="number">+29,000</h2>
       <div className="amount"> 
-      <h3>Income </h3>
-      <h3>Expenses</h3>
+      <h3 id="income">Income &nbsp;&nbsp;&nbsp;&nbsp; + 35,000 </h3>
+      <h3 id="expense">Expenses  &nbsp;&nbsp;&nbsp;&nbsp; - 35,000</h3>
       </div>
-     
+      </div>
       </div>
       
     </>
