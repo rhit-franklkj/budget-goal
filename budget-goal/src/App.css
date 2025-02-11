@@ -2,7 +2,12 @@
   background-color: #A8857a; 
   color: white;  
   /*font-size: 50em; */
+  font-family: 'Gilda Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/gildadisplay/v18/t5tmIRoYMoaYG0WEOh7HwMeR7Tk.ttf) format('truetype');
 }
+
 
 .container-fluid {
   /* background-color: blue;  */
