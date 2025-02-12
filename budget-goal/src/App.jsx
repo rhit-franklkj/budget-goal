@@ -27,8 +27,7 @@ function App() {
       <div className="container1">
         <div className="thing">
           <h1>Avaliable Budget</h1>
-          <h2 id="number">+29,000</h2>
-          <div className="amount">
+          <h2 id="number">+29,000</h2> <div className="amount">
             <h3 id="income">Income &nbsp;&nbsp;&nbsp;&nbsp; + 35,000 </h3>
             <h3 id="expense">Expenses  &nbsp;&nbsp;&nbsp;&nbsp; - 35,000</h3>
           </div>
@@ -37,14 +36,14 @@ function App() {
 
       <div className="row g-3 align-items-center">
         <div className="col-auto">
-          <button className="btn btn-secondary dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">+</button>
+          <button className="btn btn-secondary dropdown-toggle fs-5" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">Income</button>
           <ul className="dropdown-menu">
             <li><a className="dropdown-item" href="#" onClick={() => {
-              document.getElementById("dropdown").textContent = "+";
-            }}>+</a></li>
+              document.getElementById("dropdown").textContent = "Income";
+            }}>Income</a></li>
             <li><a className="dropdown-item" href="#" onClick={() => {
-              document.getElementById("dropdown").textContent = "–";
-            }}>-</a></li>
+              document.getElementById("dropdown").textContent = "Expense";
+            }}>Expense</a></li>
           </ul>
         </div>
         <div className="col-auto">

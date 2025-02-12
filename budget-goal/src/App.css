@@ -1,6 +1,5 @@
 #root {
   color: white;  
-  /*font-size: 50em; */
   font-family: 'Gilda Display';
   font-style: normal;
   font-weight: 400;
@@ -17,7 +16,7 @@
   flex-direction: column;  
   color: white; 
   gap: 0px;
-  background-color: #5d383170;
+  background-color: #695c6270;
 }
 
 .container1 {
@@ -61,7 +60,7 @@ h1 {
 }
 
 .navbar.navbar-expand-lg {
-  background-color: #A8857a; 
+  background-color: #695c62; 
 }
 .container-fluid {
   /* background-color: blue;  */
@@ -109,11 +108,11 @@ h1 {
   height: 10vh; 
   margin: 0px; 
   padding-bottom: 5px; 
-  background-color: #A8857a; 
+  background-color: #695c62; 
 }
 
 .btn.btn-secondary.dropdown-toggle {
-  background-color: #5d3831; 
+  background-color: #9d9093; 
   border: 0px;
 }
 
