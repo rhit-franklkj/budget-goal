@@ -16,7 +16,7 @@ export default function Tables(props) {
             {incomeSnapshots.map((documentSnapshot) => (
               <tr key= {documentSnapshot.id}>
                 <th scope="row">{documentSnapshot.data().description}</th>
-                <td>{documentSnapshot.data().amount}</td>
+                <td>{parseInt(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
               </tr>     
             ))}
           </tbody>
@@ -31,7 +31,7 @@ export default function Tables(props) {
           {expenseSnapshots.map((documentSnapshot) => (
               <tr key= {documentSnapshot.id}>
                 <th scope="row">{documentSnapshot.data().description}</th>
-                <td>{documentSnapshot.data().amount}</td>
+                <td>{parseInt(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
               </tr>     
             ))}
           </tbody>

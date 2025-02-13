@@ -32,7 +32,7 @@ export default function BudgetPage(){
     return (
         <>
             <Navbar /> 
-            <Background /> 
+            <Background incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots }/> 
             <InputMoney manager={moneyManager}/> 
             <Tables incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots } /> 
         </> 
