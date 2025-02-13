@@ -10,7 +10,6 @@
 .thing {
   text-align: center;
   position: relative; 
-  /* left: 900px;  */
   top: -200px; 
   display: inline-flex;
   flex-direction: column;  
