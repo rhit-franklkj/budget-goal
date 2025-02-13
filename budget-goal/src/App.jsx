@@ -47,75 +47,62 @@ function App() {
           </ul>
         </div>
         <div className="col-auto">
-        <label className="fs-2">$&nbsp;</label>
-          <input type="text" id="inputMoney" className="form-control fs-5"></input>
+        <label className="fs-2"></label>
+        <div className="d-flex gap-2">
+          <input type="text" className="form-control fs-5" placeholder="Add description"/>
+          <input type="text" id="inputMoney" className="form-control fs-5" placeholder="Enter Amount"/>
+          <button className="btn fs-5" type="button" style={{ backgroundColor: "#2C3930", color: "white" }}>Submit</button>
+        </div>
         </div>
       </div>
+
+
             {/*Todo: add actual data to the thing. I just do not care enough rn. Also I want to get CSS ironed out before doing that. */}
       <div className="container2">
-        <table className="table table-striped">
+      <table className="table table-striped">
+
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col" id="tableIncome">INCOME</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row" >Salary</th>
+      <td>$300.00</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">Overtime</th>
+      <td>$200.00</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">Babysitting</th>
+      <td colSpan="2">$40.00</td>
     </tr>
   </tbody>
 </table>
 <table className="table table-striped">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col" id="tableExpenses">EXPENSES</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">Shopping</th>
+      <td>$120.00</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">Grocery</th>
+      <td>$80.00</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">Gas</th>
+      <td colSpan="2">$60.00</td>
     </tr>
   </tbody>
-</table>
-
-
-      </div>
-
-
+</table> 
+    </div>
     </>
   )
 }

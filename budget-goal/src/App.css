@@ -131,4 +131,13 @@ h1 {
 }
 
 
+#tableIncome {
+  color: #75946B;
+  font-size: 20px;
+}
 
+#tableExpenses {
+  color: #d76c6e;
+  font-size: 20px;
+
+}
