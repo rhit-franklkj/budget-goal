@@ -1,17 +1,19 @@
-import { collection, addDoc } from "firebase/firestore";
-import { onSnapshot } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "./firebaseConfig.js"
 
+
+//TODO: remove magic words. Preferably with user-specific tables.
 // const collectionMovieQuotes = "MovieQuotes";
 // const keyQuote = "quote";
 // const keyMovie = "movie";
 // const keyLastEdited = "lastEdited";
 
-
 class MoneyManager {
     constructor() {
-        this.documentSnapshots = []; 
+        this.incomeSnapshots = []; 
         this._ref_income = collection(db, "temp-income"); 
+        this.expenseSnapshots = []; 
         this._ref_expense = collection(db, "temp-expense"); 
     }
 
@@ -19,10 +21,10 @@ class MoneyManager {
     beginListeningIncome(changeListener) {
         console.log("begin listening to the income collection");
  
-        //const q = query(this._ref, orderBy(keyLastEdited, "desc")); 
-        return onSnapshot(this._ref_income, (querySnapshot) => {
+        const q = query(this._ref_income, orderBy("lastEdited", "asc")); 
+        return onSnapshot(q, (querySnapshot) => {
             const movieQuotes = [];
-            this.documentSnapshots = querySnapshot.docs; 
+            this.incomeSnapshots = querySnapshot.docs; 
             changeListener(); 
         });
     }
@@ -30,21 +32,21 @@ class MoneyManager {
     beginListeningExpense(changeListener) {
         console.log("begin listening to the expense collection");
  
-        //const q = query(this._ref, orderBy(keyLastEdited, "desc")); 
-        return onSnapshot(this._ref_expense, (querySnapshot) => {
+        const q = query(this._ref_expense, orderBy("lastEdited", "asc")); 
+        return onSnapshot(q, (querySnapshot) => {
             const movieQuotes = [];
-            this.documentSnapshots = querySnapshot.docs; 
+            this.expenseSnapshots = querySnapshot.docs; 
             changeListener(); 
         });
     }
 
     async add(method, description, amount) {
-                console.log("write");
                 if(method === "Income"){
                     try {
                         const docRef = await addDoc(this._ref_income, {
                             "description": description,
                             "amount": amount,
+                            "lastEdited": serverTimestamp()
                         });
                         console.log("Document written with ID: ", docRef.id);
                     } catch (e) {
@@ -55,6 +57,7 @@ class MoneyManager {
                         const docRef = await addDoc(this._ref_expense, {
                             "description": description,
                             "amount": amount,
+                            "lastEdited": serverTimestamp()
                         });
                         console.log("Document written with ID: ", docRef.id);
                     } catch (e) {
@@ -66,40 +69,6 @@ class MoneyManager {
 }
 const instance = new MoneyManager();
 export default instance; 
-// class QuotesManager {
 
-//     constructor() {
-
-//         this.documentSnapshots = [];
-//         this._ref = collection(db, collectionMovieQuotes);
-
-
-//     }
-
-//     beginListening(changeListener) {
-//         console.log("begin listening to the moviequotes collection");
- 
-//         const q = query(this._ref, orderBy(keyLastEdited, "desc")); 
-//         return onSnapshot(q, (querySnapshot) => {
-//             const movieQuotes = [];
-//             this.documentSnapshots = querySnapshot.docs; 
-//             changeListener(); 
-//         });
-//     }
-
-//     async add(quote, movie) {
-//         console.log("write");
-//         try {
-//             const docRef = await addDoc(this._ref, {
-//                 [keyQuote]: quote,
-//                 [keyMovie]: movie,
-//                 [keyLastEdited]: serverTimestamp()
-//             });
-//             console.log("Document written with ID: ", docRef.id);
-//         } catch (e) {
-//             console.error("Error adding document: ", e);
-//         }
-//     }
-// }
 
 

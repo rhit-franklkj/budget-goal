@@ -5,8 +5,6 @@ import './App.css'
 import BudgetPage from "./BudgetPage.jsx"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <BudgetPage /> 

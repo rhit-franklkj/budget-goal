@@ -21,8 +21,7 @@ export default function InputMoney(props){
         <div className="d-flex gap-2">
           <input type="text" id="inputDesc" className="form-control fs-5" placeholder="Add description" required/>
           <input type="text" id="inputMoney" className="form-control fs-5" placeholder="Enter Amount" required/>
-          <button className="btn fs-5" type="button" style={{ backgroundColor: "#2C3930", color: "white" } } onClick={()=> {
-
+          <button className="btn fs-5" type="button" style={{ backgroundColor: "#2C3930", color: "white" } } onClick={(event)=> {
                 if( document.getElementById("dropdown").textContent === "Income"){
                     const desc = document.getElementById("inputDesc").value;
                     const money = document.getElementById("inputMoney").value; 

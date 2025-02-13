@@ -8,20 +8,23 @@ import moneyManager from "./MoneyManager.js"
 
 export default function BudgetPage(){
 
-    const [documentSnapshots, setDocumentSnapshots] = useState([]); 
+    const [incomeSnapshots, setIncomeSnapshots] = useState([]); 
+
+    const [expenseSnapshots, setExpenseSnapshots] = useState([]); 
 
     useEffect(() => {
         //begin listening 
         const  unsubscribeIncome = moneyManager.beginListeningIncome(() => {
-            setDocumentSnapshots(moneyManager.documentSnapshots); 
+            setIncomeSnapshots(moneyManager.incomeSnapshots); 
         })
-        const  unsubscribeEspense = moneyManager.beginListeningExpense(() => {
-            setDocumentSnapshots(moneyManager.documentSnapshots); 
+        const  unsubscribeExpense = moneyManager.beginListeningExpense(() => {
+            setExpenseSnapshots(moneyManager.expenseSnapshots); 
         })
 
         return () => {
             //stop listening
             unsubscribeIncome(); 
+            unsubscribeExpense(); 
         }
     }, []); 
 
@@ -31,7 +34,7 @@ export default function BudgetPage(){
             <Navbar /> 
             <Background /> 
             <InputMoney manager={moneyManager}/> 
-            <Tables /> 
+            <Tables incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots } /> 
         </> 
     )
 }
