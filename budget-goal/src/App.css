@@ -144,3 +144,10 @@ h1 {
 .invalid{
   border: 4px solid #d76c6e; 
 }
+
+.show {
+  display: block;
+  color: black; 
+
+}
+

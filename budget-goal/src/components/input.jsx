@@ -22,18 +22,10 @@ export default function InputMoney(props) {
             <input type="text" id="inputDesc" className="form-control fs-5" placeholder="Add description" required />
             <input type="text" id="inputMoney" className="form-control fs-5" placeholder="Enter Amount" required />
             <button className="btn fs-5" type="button" style={{ backgroundColor: "#2C3930", color: "white" }} onClick={(event) => {
-
               const desc = document.getElementById("inputDesc").value;
               const money = document.getElementById("inputMoney").value;
               if(!validate(desc, money)){
                 return; 
-              }
-
-              if(money.length == 0 ){
-                document.getElementById("inputMoney").classList.add("invalid"); 
-                return; 
-              } else {
-                document.getElementById("inputMoney").classList.remove("invalid");
               }
 
               if (document.getElementById("dropdown").textContent === "Income") {
@@ -61,8 +53,7 @@ function validate(desc, money){
   } else {
     document.getElementById("inputDesc").classList.remove("invalid");
   }
-
-  if(money.length == 0 ){
+  if(money.length == 0 || isNaN(money) ){
     document.getElementById("inputMoney").classList.add("invalid"); 
     valid = false; 
   } else {

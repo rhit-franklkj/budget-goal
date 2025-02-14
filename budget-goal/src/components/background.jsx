@@ -12,6 +12,15 @@ export default function Background(props) {
   expenses += parseInt(snap.data().amount); 
  }
 
+ let total = income - expenses; 
+ let totalStr = ""; 
+ if(total < 0){
+  total *= -1; 
+  totalStr = "- $" + total.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})
+ } else {
+  totalStr = "+ $" + total.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})
+ }
+
 
   return (
     <>
@@ -19,9 +28,9 @@ export default function Background(props) {
       <div className="container1">
         <div className="thing">
           <h1>Avaliable Budget</h1>
-          <h2 id="number">{(income-expenses).toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})}</h2> <div className="amount">
-            <h3 id="income">Income &nbsp;&nbsp;&nbsp;&nbsp; + {income.toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</h3>
-            <h3 id="expense">Expenses  &nbsp;&nbsp;&nbsp;&nbsp; - {expenses.toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</h3>
+          <h2 id="number">{totalStr}</h2> <div className="amount">
+            <h3 id="income">Income &nbsp;&nbsp;&nbsp;&nbsp; + ${income.toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</h3>
+            <h3 id="expense">Expenses  &nbsp;&nbsp;&nbsp;&nbsp; - ${expenses.toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</h3>
           </div>
         </div>
       </div>
