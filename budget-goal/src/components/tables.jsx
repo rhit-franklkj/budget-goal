@@ -19,7 +19,7 @@ export default function Tables(props) {
                 onClick(documentSnapshot.id, "income"); 
               }}>
                 <th scope="row">{documentSnapshot.data().description}</th>
-                <td>${parseInt(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
+                <td>${parseFloat(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
               </tr>     
             ))}
           </tbody>
@@ -36,7 +36,7 @@ export default function Tables(props) {
                 onClick(documentSnapshot.id, "expense"); 
               }}>
                 <th scope="row">{documentSnapshot.data().description}</th>
-                <td>${parseInt(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
+                <td>${parseFloat(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
               </tr>     
             ))}
           </tbody>

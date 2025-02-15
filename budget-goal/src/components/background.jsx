@@ -6,10 +6,10 @@ export default function Background(props) {
   let income = 0; 
   let expenses = 0; 
  for(let snap of incomeSnapshots){
-  income += parseInt(snap.data().amount); 
+  income += parseFloat(snap.data().amount); 
  }
  for(let snap of expenseSnapshots){
-  expenses += parseInt(snap.data().amount); 
+  expenses += parseFloat(snap.data().amount); 
  }
 
  let total = income - expenses; 

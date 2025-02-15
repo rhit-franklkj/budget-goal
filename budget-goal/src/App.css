@@ -78,7 +78,6 @@ h1 {
 
 .navbar-brand:hover {
   color: white;
-  text-decoration-line: underline; 
 }
 
 .navbar-nav .nav-link,  .navbar-nav .nav-link.active{
@@ -148,6 +147,9 @@ h1 {
 .show {
   display: block;
   color: black; 
+}
 
+.goal {
+  background-color: aquamarine;
 }
 
