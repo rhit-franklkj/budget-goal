@@ -1,6 +1,7 @@
 import { collection, addDoc, setDoc, deleteDoc, serverTimestamp } from "firebase/firestore";
 import { onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "./firebaseConfig.js"
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 
 //TODO: remove magic words. Preferably with user-specific tables.
@@ -8,13 +9,41 @@ import { db } from "./firebaseConfig.js"
 // const keyQuote = "quote";
 // const keyMovie = "movie";
 // const keyLastEdited = "lastEdited";
+const user = getAuth.currentUser; 
+const auth = getAuth();
+
+
+
+
 
 class MoneyManager {
+    
     constructor() {
+        console.log("running constructor");
         this.incomeSnapshots = [];
-        this._ref_income = collection(db, "temp-income");
         this.expenseSnapshots = [];
-        this._ref_expense = collection(db, "temp-expense");
+        this.incomeTable = "temp-income"; 
+        this.expenseTable = "temp-expense"
+        if(user){
+            console.log("you are signed in");
+            this._ref_income = collection(db, user.uid + "-income"); 
+            this._ref_expense = collection(db, user.uid + "-expense")
+
+        } else {
+       
+            this._ref_income = collection(db, this.incomeTable);
+            this._ref_expense = collection(db, this.expenseTable);
+
+        }
+        
+    }
+
+    updateUser(uid) {
+        console.log("signed in= changed refs.");
+        this.incomeTable = uid + "-income"; 
+        this._ref_income = collection(db, this.incomeTable); 
+        this.expenseTable = uid + "-expense"
+        this._ref_expense = collection(db, this.expenseTable); 
     }
 
 
@@ -80,6 +109,19 @@ class MoneyManager {
 
 const instance = new MoneyManager();
 export default instance;
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      
+      const uid = user.uid;
+    
+      instance.updateUser(uid); 
+        
+      // ...
+    } else {
+      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+    }
+  });
 
 
 

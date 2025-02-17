@@ -42,9 +42,17 @@ export default function BudgetPage(){
             <Background incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots }/> 
             <InputMoney manager={moneyManager}/> 
             <Tables incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots } onClick={(id, table) => {
-                let dbName = "temp-" + table; 
+                //TODO: CHANGE THIS
+                //let dbName = "temp-" + table; 
                 setIsDialogOpen(true);
-                setTransaction(doc(db, dbName, id)); 
+                if(table === "income"){
+                    setTransaction(doc(db, moneyManager.incomeTable, id)); 
+                } else if (table === "expense"){
+                    setTransaction(doc(db, moneyManager.expenseTable, id)); 
+                }
+
+                
+                
             }}/> 
             <TransactionDialog isOpen={isDialogOpen} 
             edit={(description, amount) => {
