@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebaseConfig.js';
+import Navbar from './components/navbar.jsx';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Signup = () => {
                 console.log(user);
                 console.log(user.uid); 
 
-                navigate("/login") // I /might/ be able to make this go directly to the main page. idk though. 
+                navigate("/") 
                 // ...
             })
             .catch((error) => {
@@ -34,6 +35,7 @@ const Signup = () => {
 
     return (
         <main >
+            <Navbar /> 
             <section>
                 <div>
                     <div>

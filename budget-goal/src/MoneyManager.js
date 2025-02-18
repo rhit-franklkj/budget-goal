@@ -2,6 +2,7 @@ import { collection, addDoc, setDoc, deleteDoc, serverTimestamp } from "firebase
 import { onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "./firebaseConfig.js"
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import BudgetPage from "./BudgetPage.jsx";
 
 
 //TODO: remove magic words. Preferably with user-specific tables.
@@ -10,11 +11,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 // const keyMovie = "movie";
 // const keyLastEdited = "lastEdited";
 const user = getAuth.currentUser; 
-const auth = getAuth();
-
-
-
-
+const auth = getAuth()
 
 class MoneyManager {
     
@@ -42,8 +39,11 @@ class MoneyManager {
         console.log("signed in= changed refs.");
         this.incomeTable = uid + "-income"; 
         this._ref_income = collection(db, this.incomeTable); 
+        BudgetPage.incomeSnapshots = []; 
         this.expenseTable = uid + "-expense"
         this._ref_expense = collection(db, this.expenseTable); 
+        BudgetPage.expenseSnapshots = [];
+
     }
 
 

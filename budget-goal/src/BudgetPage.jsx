@@ -33,7 +33,7 @@ export default function BudgetPage(){
             unsubscribeIncome(); 
             unsubscribeExpense(); 
         }
-    }, []); 
+    }, [incomeSnapshots, expenseSnapshots]); 
 
 
     return (

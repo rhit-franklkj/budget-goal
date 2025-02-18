@@ -1,8 +1,18 @@
 import PropTypes from "prop-types"
+import {getAuth, onAuthStateChanged} from "firebase/auth"
+import moneyManager from "../MoneyManager.js"
+
+let incomeSnapshots; 
+let expenseSnapshots; 
+
+
 export default function Tables(props) {
-  const incomeSnapshots = props.incomeSnapshots; 
-  const expenseSnapshots = props.expenseSnapshots; 
+  incomeSnapshots = moneyManager.incomeSnapshots; 
+  expenseSnapshots = moneyManager.expenseSnapshots; 
   const onClick = props.onClick; 
+  const updateTables = props.updateTables; 
+  //console.log(incomeSnapshots);
+
   return (
     <>
       <div className="container2">
@@ -16,7 +26,7 @@ export default function Tables(props) {
           <tbody>
             {incomeSnapshots.map((documentSnapshot) => (
               <tr key= {documentSnapshot.id} onClick={() => {
-                onClick(documentSnapshot.id, "income"); 
+                onClick(documentSnapshot.id, "income");
               }}>
                 <th scope="row">{documentSnapshot.data().description}</th>
                 <td>${parseFloat(documentSnapshot.data().amount).toLocaleString(undefined, {maximumFractionDigits: 2, minimumFractionDigits: 2})}</td>
@@ -50,5 +60,6 @@ export default function Tables(props) {
 Tables.propTypes = {
   incomeSnapshots: PropTypes.array.isRequired, 
   expenseSnapshots: PropTypes.array.isRequired, 
-  onClick: PropTypes.func.isRequired 
+  onClick: PropTypes.func.isRequired, 
+  updateTables: PropTypes.func
 }

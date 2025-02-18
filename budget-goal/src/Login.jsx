@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './firebaseConfig.js';
 import { NavLink, useNavigate } from 'react-router-dom'
+import Navbar from './components/navbar.jsx';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ const Login = () => {
 
     return (
         <>
+        <Navbar /> 
             <main >
                 <section>
                     <div>

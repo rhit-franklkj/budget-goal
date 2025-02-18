@@ -13,6 +13,8 @@ export default function Navbar(){
             <div className="navbar-nav">
               <Link className="nav-link active" aria-current="page" to="/">Balance</Link>
               <Link className="nav-link" to="/goal">Goal</Link>
+              <Link className="nav-link" to="/login">Log In</Link>
+              <Link className="nav-link" to="/signup">Sign Up</Link>
             </div>
           </div>
         </div>
