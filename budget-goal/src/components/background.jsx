@@ -1,7 +1,11 @@
 import PropTypes from "prop-types"
+import {useState} from "react"
+
 export default function Background(props) {
   const incomeSnapshots = props.incomeSnapshots;
   const expenseSnapshots = props.expenseSnapshots;
+
+  //const [total, setTotal] = useState(-1);
 
   let income = 0; 
   let expenses = 0; 
@@ -12,13 +16,14 @@ export default function Background(props) {
   expenses += parseFloat(snap.data().amount); 
  }
 
- let total = income - expenses; 
+window.total = income - expenses; 
+let budgetTotal = window.total; 
  let totalStr = ""; 
- if(total < 0){
-  total *= -1; 
-  totalStr = "- $" + total.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})
+ if(budgetTotal < 0){
+  budgetTotal *= -1; 
+  totalStr = "- $" + budgetTotal.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})
  } else {
-  totalStr = "+ $" + total.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})
+  totalStr = "+ $" + budgetTotal.toLocaleString(undefined, {maximumFractionDigits:2, minimumFractionDigits:2})
  }
 
 
