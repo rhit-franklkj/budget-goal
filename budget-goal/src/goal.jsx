@@ -15,9 +15,13 @@ export default function Goal() {
           <label className="fs-4">Want to Save: &nbsp; </label>
         <div className="d-flex gap-2">
           <input type="text" id="inputDesc" className="form-control fs-5" placeholder="Add description" required />
-          <button className="btn fs-5" type="button" style={{ backgroundColor: "#2C3930", color: "white" }} onClick={(event) => {
-          }}>Submit</button>
         </div>
+      </div>
+
+      <div>
+        
+
+
       </div>
 
     
