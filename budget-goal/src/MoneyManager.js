@@ -50,7 +50,6 @@ class MoneyManager {
     beginListeningIncome(changeListener) {
         const q = query(this._ref_income, orderBy("lastEdited", "asc"));
         return onSnapshot(q, (querySnapshot) => {
-            const movieQuotes = [];
             this.incomeSnapshots = querySnapshot.docs;
             changeListener();
         });
@@ -59,7 +58,6 @@ class MoneyManager {
     beginListeningExpense(changeListener) {
         const q = query(this._ref_expense, orderBy("lastEdited", "asc"));
         return onSnapshot(q, (querySnapshot) => {
-            const movieQuotes = [];
             this.expenseSnapshots = querySnapshot.docs;
             changeListener();
         });
@@ -114,10 +112,9 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
       
       const uid = user.uid;
-    
       instance.updateUser(uid); 
         
-      // ...
+    
     } else {
       console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     }
