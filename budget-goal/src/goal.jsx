@@ -32,6 +32,7 @@ export default function Goal() {
     <>
       <Navbar />
       <Background incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots }/> 
+      <div id="goalForm">
       <div className="row g-3 align-items-center goal">
         <div className="col-auto">
           <label className="fs-2"></label>
@@ -41,7 +42,7 @@ export default function Goal() {
             <input type="text" id="goalCost" className="form-control fs-5" placeholder="Add cost" required />
           </div>
         </div>
-
+      
         <div className="container3 col-10">
           <div className="col-6 fs-4">
             <div className="mb-3">
@@ -60,6 +61,7 @@ export default function Goal() {
               console.log( "You need to save " + amount + " for a consistent " + time + " weeks to save up for " + desc);
             }}>Calculate Amount</button>
           </div>
+          <div className="vr"></div>
           <div className="col-6 fs-4">
               <div className="mb-3">
                 <label htmlFor="goalAmt" className="form-label">Amount</label>
@@ -81,7 +83,7 @@ export default function Goal() {
         <div className="hide center fs-2" id="output"></div>
 
 
-
+      </div>
       </div>
 
     </>

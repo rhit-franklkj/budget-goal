@@ -199,3 +199,20 @@ form {
   color: white;
 }
 
+html {
+  background-color: #dbc7bd; 
+}
+
+
+
+#goalForm{
+  background-color: #695c62; 
+  padding-bottom: 200px; 
+}
+
+.vr{
+  border: 2px solid white;
+  height: 150px; 
+  margin: 10px; 
+
+}
