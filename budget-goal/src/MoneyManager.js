@@ -16,7 +16,6 @@ const auth = getAuth()
 class MoneyManager {
     
     constructor() {
-        console.log("running constructor");
         this.incomeSnapshots = [];
         this.expenseSnapshots = [];
         this.incomeTable = "temp-income"; 
@@ -110,14 +109,9 @@ export default instance;
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      
       const uid = user.uid;
       instance.updateUser(uid); 
-        
-    
-    } else {
-      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-    }
+    } 
   });
 
 

@@ -53,7 +53,7 @@ function validate(desc, money){
   } else {
     document.getElementById("inputDesc").classList.remove("invalid");
   }
-  if(money.length == 0 || isNaN(money) ){
+  if(money.length == 0 || isNaN(money) || money < 0){
     document.getElementById("inputMoney").classList.add("invalid"); 
     valid = false; 
   } else {

@@ -28,10 +28,10 @@ function TransactionDialog(props) {
           <Button variant="secondary" onClick={(props.hide)}>
             Close
           </Button>
-          <Button variant="primary" onClick={props.delete}>
+          <Button variant="danger" onClick={props.delete}>
             Delete
           </Button>
-          <Button variant="primary" onClick={() => {
+          <Button variant="success" onClick={() => {
             let desc = document.getElementById("editDesc").value; 
             let amt =  document.getElementById("editMoney").value; 
             if(!validate(desc,amt)){

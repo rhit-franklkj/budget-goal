@@ -30,10 +30,11 @@ export default function Goal() {
     }, [incomeSnapshots, expenseSnapshots]); 
   return (
     <>
+    <div id="backgroundGoal">
       <Navbar />
       <Background incomeSnapshots = {moneyManager.incomeSnapshots} expenseSnapshots = { moneyManager.expenseSnapshots }/> 
       <div id="goalForm">
-      <div className="row g-3 align-items-center goal">
+      <div className="row g-3 align-items-center goal h-100">
         <div className="col-auto">
           <label className="fs-2"></label>
           <label className="fs-4">Want to Save: &nbsp; </label>
@@ -54,11 +55,19 @@ export default function Goal() {
               let time = document.getElementById("goalTime").value; 
               
               let cost = document.getElementById("goalCost").value; 
-              let amount = (cost - window.total) / time; 
-              document.getElementById("output").classList.add("show"); 
-              document.getElementById("output").classList.remove("hide"); 
-              document.getElementById("output").textContent = "You need to save $" + Math.ceil(amount) + " for a consistent " + time + " weeks to save up for " + desc; 
-              console.log( "You need to save " + amount + " for a consistent " + time + " weeks to save up for " + desc);
+
+              if(window.total > cost){
+                document.getElementById("output").classList.add("show"); 
+                document.getElementById("output").classList.remove("hide"); 
+                document.getElementById("output").textContent = "You already have enough money for " + desc + "."; 
+
+              } else {
+                let amount = (cost - window.total) / time; 
+                document.getElementById("output").classList.add("show"); 
+                document.getElementById("output").classList.remove("hide"); 
+                document.getElementById("output").textContent = "You need to save $" + Math.ceil(amount) + " for a consistent " + time + " weeks to save up for " + desc + "."; 
+              }
+             
             }}>Calculate Amount</button>
           </div>
           <div className="vr"></div>
@@ -71,21 +80,30 @@ export default function Goal() {
               let desc = document.getElementById("goalDesc").value; 
               let amount = document.getElementById("goalAmt").value; 
               let cost = document.getElementById("goalCost").value; 
-              let time = (cost - window.total) / amount; 
-              document.getElementById("output").classList.add("show"); 
-              document.getElementById("output").classList.remove("hide"); 
-              document.getElementById("output").textContent = "You need to save $" + amount + " for a consistent " + Math.ceil(time) + " weeks to save up for " + desc; 
-              console.log( "You need to save " + amount + " for a consistent " + time + " weeks to save up for " + desc);
+              if(window.total > cost){
+                document.getElementById("output").classList.add("show"); 
+                document.getElementById("output").classList.remove("hide"); 
+                document.getElementById("output").textContent = "You already have enough money for " + desc + "."; 
+
+              } else {
+                let time = (cost - window.total) / amount; 
+                document.getElementById("output").classList.add("show"); 
+                document.getElementById("output").classList.remove("hide"); 
+                document.getElementById("output").textContent = "You need to save $" + amount + " for a consistent " + Math.ceil(time) + " weeks to save up for " + desc + "."; 
+
+              }
+             
             }}>Calculate Time</button>
             </div>
         </div>
-
-        <div className="hide center fs-2" id="output"></div>
+        
 
 
       </div>
+      <div className="hide center fs-2" id="output"></div>
       </div>
-
+      
+</div>
     </>
   )
 }
