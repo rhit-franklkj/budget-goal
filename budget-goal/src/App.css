@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/gildadisplay/v18/t5tmIRoYMoaYG0WEOh7HwMeR7Tk.ttf) format('truetype');
-  background-color: #00ff00; 
+  background-color: #9d9093; 
 }
 
 .thing {
@@ -174,5 +174,28 @@ h1 {
   font-size: 0.75em; 
   background-color: #75946B;
   border: 2px solid #75946B; 
+}
+
+label {
+  font-size: 2em; 
+}
+form {
+  justify-content: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center; 
+
+}
+
+.green-btn, .green-btn:hover, .green-btn:active {
+
+  background-color: #75946B;
+  border: 1px solid #695c62;
+}
+
+
+
+.white {
+  color: white;
 }
 

@@ -32,12 +32,11 @@ const Login = () => {
             <main >
                 <section>
                     <div>
-                        <p> FocusApp </p>
-
+                    <br></br> <br></br><br></br>
                         <form>
                             <div>
-                                <label htmlFor="email-address">
-                                    Email address
+                                <label htmlFor="email-address" className="fs-4">
+                                    Email address&nbsp; 
                                 </label>
                                 <input
                                     id="email-address"
@@ -50,8 +49,8 @@ const Login = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="password">
-                                    Password
+                                <label htmlFor="password" className="fs-4">
+                                    Password&nbsp; 
                                 </label>
                                 <input
                                     id="password"
@@ -62,20 +61,21 @@ const Login = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
-
+                            <br></br>
                             <div>
-                                <button onClick={onLogin}>
+                                <button className="btn btn-primary fs-4 green-btn" onClick={onLogin}>
                                     Login
                                 </button>
                             </div>
                         </form>
 
-                        <p className="text-sm text-white text-center">
+                        <p className="text-sm text-white text-center fs-4">
                             No account yet? {' '}
-                            <NavLink to="/signup">
+                            <NavLink to="/signup" className="white">
                                 Sign up
                             </NavLink>
                         </p>
+                        <br></br><br></br> <br></br>
 
                     </div>
                 </section>

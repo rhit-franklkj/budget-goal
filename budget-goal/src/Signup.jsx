@@ -39,11 +39,11 @@ const Signup = () => {
             <section>
                 <div>
                     <div>
-                        <h1> FocusApp </h1>
+                    <br></br><br></br> <br></br>
                         <form>
                             <div>
-                                <label htmlFor="email-address">
-                                    Email address
+                                <label htmlFor="email-address" className="fs-4">
+                                    Email address&nbsp; 
                                 </label>
                                 <input
                                     type="email"
@@ -56,8 +56,8 @@ const Signup = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="password">
-                                    Password
+                                <label className="fs-4" htmlFor="password">
+                                    Password&nbsp; 
                                 </label>
                                 <input
                                     type="password"
@@ -68,8 +68,9 @@ const Signup = () => {
                                     placeholder="Password"
                                 />
                             </div>
-
+                            <br></br>
                             <button
+                             className="btn btn-primary fs-4 green-btn"
                                 type="submit"
                                 onClick={onSubmit}
                             >
@@ -78,13 +79,14 @@ const Signup = () => {
 
                         </form>
 
-                        <p>
+                        <p className="fs-4 center">
                             Already have an account?{' '}
-                            <NavLink to="/login" >
+                            <NavLink to="/login"  className="white">
                                 Sign in
                             </NavLink>
                         </p>
                     </div>
+                    <br></br><br></br> <br></br>
                 </div>
             </section>
         </main>
