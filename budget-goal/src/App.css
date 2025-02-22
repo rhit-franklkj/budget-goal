@@ -235,6 +235,7 @@ form {
 #output {
   position: relative; 
   background-color: #9d9093; 
+  color: white;
   padding: 0px;
   
 }

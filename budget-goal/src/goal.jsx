@@ -37,7 +37,7 @@ export default function Goal() {
       <div className="row g-3 align-items-center goal h-100">
         <div className="col-auto">
           <label className="fs-2"></label>
-          <label className="fs-4">Want to Save: &nbsp; </label>
+          <label className="fs-2">Want to Save: &nbsp; </label>
           <div className="d-flex gap-2">
             <input type="text" id="goalDesc" className="form-control fs-5" placeholder="Add description" required />
             <input type="text" id="goalCost" className="form-control fs-5" placeholder="Add cost" required />
@@ -48,7 +48,7 @@ export default function Goal() {
           <div className="col-6 fs-4">
             <div className="mb-3">
               <label htmlFor="goalTime" className="form-label">Time</label>
-              <input type="text" className="form-control" id="goalTime" />
+              <input type="text" className="form-control fs-5" id="goalTime" placeholder="Add Desired Weeks" required/>
             </div>
             <button type="submit" className="btn btn-primary goal-btn" onClick = {() => {
               let desc = document.getElementById("goalDesc").value; 
@@ -74,7 +74,7 @@ export default function Goal() {
           <div className="col-6 fs-4">
               <div className="mb-3">
                 <label htmlFor="goalAmt" className="form-label">Amount</label>
-                <input type="text" className="form-control" id="goalAmt" />
+                <input type="text" className="form-control fs-5" id="goalAmt" placeholder="Add Desired Amount" required/>
               </div>
               <button type="submit" className="btn btn-primary goal-btn" onClick = {() => {
               let desc = document.getElementById("goalDesc").value; 
